@@ -1,12 +1,24 @@
 "use client"
 
 import Image from "next/image";
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
 
 export default function Home() {
-  const [title, settitle] = useState ('')
-  const [content, setcontent] = useState ('')
-  let data = new Date()//data.GetDay()
+  const [Task, setTask] = useState({//Vai colocar todos os inputs em  um só
+    title: '',
+    content: '',
+    dataF: ''
+  })
+  const [Tasks, setTasks] = useState([])
+  let dataC = new Date()//dataC.GetDay(
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const {name, value} = e.target;
+    setTask({
+      ...Task,
+      [name]: value
+    })
+  }
 
   return (
     <>
@@ -15,9 +27,9 @@ export default function Home() {
       <main>
         <section>
           <div>
-            <input type="text" name="" id=""/>
-            <input type="text" name="" id="" />
-            <input type="date" name="" id=""/>
+            <input name="title" value={Task.title} onChange={handleChange} type="text"/>
+            <input name="content" value={Task.content} onChange={handleChange} type="text"/>
+            <input name="dataF" value={Task.dataF} onInput={handleChange} type="date" />
           </div>
           <div>
 
