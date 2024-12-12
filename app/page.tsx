@@ -4,21 +4,10 @@ import Image from "next/image";
 import { use, useEffect, useState } from "react";
 
 export default function Home() {
-  const [Task, setTask] = useState({//Vai colocar todos os inputs em  um só
-    title: '',
-    content: '',
-    dataF: ''
-  })
   const [Tasks, setTasks] = useState([])
-  let dataC = new Date()//dataC.GetDay(
-  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {name, value} = e.target;
-    setTask({
-      ...Task,
-      [name]: value
-    })
-  }
+  const [title, settitle] = useState('')
+  const [content, setcontent] = useState('')
+  const [dataF, setdataF] = useState('')
 
   return (
     <>
@@ -27,9 +16,9 @@ export default function Home() {
       <main>
         <section>
           <div>
-            <input name="title" value={Task.title} onChange={handleChange} type="text"/>
-            <input name="content" value={Task.content} onChange={handleChange} type="text"/>
-            <input name="dataF" value={Task.dataF} onInput={handleChange} type="date" />
+            <input name="title" value={title} onChange={(e) => settitle(e.target.value)} type="text"/>
+            <input name="content" value={content} onChange={(e) => setcontent(e.target.value)} type="text"/>
+            <input name="dataF" value={dataF} onChange={(e) => setdataF(e.target.value)} type="date" />
           </div>
           <div>
 
