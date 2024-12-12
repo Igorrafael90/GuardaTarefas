@@ -13,6 +13,9 @@
     --foreground: #ededed;
   }
 }
+/*Cor para o fundo #33384e*/
+/*Cor para icones e titulos #4a9f3c ou #1d7f13*/
+/*Conteudo #fffeff*/
 
 body {
   color: var(--foreground);
