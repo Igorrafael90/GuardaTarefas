@@ -15,10 +15,9 @@
 }
 /*Cor para o fundo #33384e*/
 /*Cor para icones e titulos #4a9f3c ou #1d7f13*/
-/*Conteudo #fffeff*/
+/*Conteudo #fffeff #14161f #1e2027*/
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  background-color: #161822;
   font-family: Arial, Helvetica, sans-serif;
 }

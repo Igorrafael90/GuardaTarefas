@@ -9,8 +9,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        Cinza: '#2e313b',
+        Verde: '#1d7f13'
       },
     },
   },
