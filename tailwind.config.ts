@@ -9,8 +9,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        Cinza: '#2e313b',
-        Verde: '#1d7f13'
+        CinzaM: '#121212',//#0f0f0f
+        Cinza: '#1c1c1c',//#121212
+        Verde: '#11390e'
       },
     },
   },
