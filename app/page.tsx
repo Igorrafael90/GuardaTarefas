@@ -10,7 +10,7 @@ export default function Home() {
   const [Content, setContent] = useState('');
   const [DataF, setDataF] = useState('');
   const [Tasks, setTasks] = useState<Task[]>([]);  // Tipifique o estado Tasks como um array de objetos do tipo Task
-  
+
   useEffect(() => {
     const storedTasks = localStorage.getItem('tasks');
     if (storedTasks) {
@@ -20,9 +20,9 @@ export default function Home() {
 
   return (
     <>
-      <header className="w-full bg-Cinza h-10 flex items-center">
-        <FontAwesomeIcon className="ml-2 h-9 text-Verde" icon={faClock}/>
-        <h1>Guarda tarefa</h1>
+      <header className="w-full bg-Cinza h-10 flex items-center space-x-2">
+        <FontAwesomeIcon className="ml-2 h-9 text-Verde" icon={faClock} />
+        <h1 className="text-white font-bold">Guarda tarefa</h1>
       </header>
       <main className="w-full h-full flex items-center justify-center">
         <section className="w-full flex mt-10 space-x-1">
@@ -34,14 +34,21 @@ export default function Home() {
             <label className="font-bold">Data Final</label>
             <input className="block bg-Cinza w-32 rounded-md" name="dataF" value={DataF} onChange={(e) => setDataF(e.target.value)} type="date" />
             <button className="bg-Verde p-2 mt-3 rounded-md w-44 font-bold" onClick={() => addTask(Title, Content, DataF, Tasks, setTasks, setTitle, setContent, setDataF)}>
-            Adicionar
-          </button>
+              Adicionar
+            </button>
           </div>
-          <div className="bg-CinzaM w-3/4 rounded-lg shadow-Verde shadow-inner grid grid-cols-3 p-3">
-            <div className="bg-Cinza w-80 h-40 rounded-lg">
-              <h1></h1>
-              <p></p>
-            </div>
+          <div className="bg-CinzaM w-3/4 rounded-lg shadow-Verde shadow-inner grid grid-cols-2 p-3">
+            {Tasks.length == 0 ? (
+              <p className="text-white font-extrabold">Não existe tarefas</p>
+            ) : (
+              Tasks.map((task, index) => (
+                <div className="bg-Cinza w-80 h-40 rounded-lg flex flex-col p-2 mb-5">
+                  <h1>{task.Title}</h1>
+                  <p className="break-words">{task.Content}</p>
+                  <p className="relative top-16">{task.DataF}</p>
+                </div>
+              ))
+            )}
           </div>
         </section>
       </main>
