@@ -5,6 +5,7 @@ export interface Task {
   Title: string;
   Content: string;
   DataF: string;
+  dataCriacao: string;
 }
 
 export const addTask = (
@@ -21,12 +22,21 @@ export const addTask = (
       alert("Preencha todos os campos");
       return;
     }
+    
+    const dataCriacao = new Date().toLocaleDateString('pt-BR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    })
 
     const newTask: Task = {
       id: Date.now(),
       Title,
       Content,
-      DataF
+      DataF,
+      dataCriacao
     };
 
     const updatedTasks = [...Tasks, newTask];//vai destrinchar as informações dadas e passar para uma nova tarefa

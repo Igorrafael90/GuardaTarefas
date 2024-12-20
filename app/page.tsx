@@ -44,16 +44,17 @@ export default function Home() {
             </button>
           </div>
           
-          <div className="bg-CinzaM w-3/4 rounded-lg shadow-Verde shadow-inner grid grid-cols-2 p-3">
+          <div className="bg-CinzaM w-3/4 h-full rounded-lg shadow-Verde shadow-inner grid grid-cols-2 p-3">
             {Tasks.length == 0 ? (
               <p className="text-white font-extrabold">Não existe tarefas</p>
             ) : (
               Tasks.map((task, index) => (
-                <div key={index} className="bg-Cinza w-80 h-40 rounded-lg flex flex-col p-2 mb-5">
-                  <h1>{task.Title}</h1>
-                  <p className="break-words">{task.Content}</p>
-                  <div className="flex justify-between relative top-16">
-                    <p>{task.DataF}</p>
+                <div key={index} className="bg-Cinza w-80 rounded-lg flex flex-col p-2 mb-5 shadow-md shadow-black">
+                  <h1 className="font-extrabold text-white text-xl">{task.Title}</h1>
+                  <p className="break-words text-white text-xs py-2">{task.Content}</p>
+                  <div className="flex justify-between">
+                    <p className="text-white font-extrabold text-sm">{task.dataCriacao}</p>
+                    <p className="text-white font-extrabold text-sm">{task.DataF}</p>
                     <button onClick={() => deleteTask(task.id, Tasks, setTasks)}>
                       <FontAwesomeIcon className="text-red-800" icon={faTrash}/>
                     </button>
