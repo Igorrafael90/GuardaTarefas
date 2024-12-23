@@ -13,6 +13,10 @@ export default {
         Cinza: '#1c1c1c',//#121212
         Verde: '#11390e'
       },
+      screens: {
+        'max-sm': { max: '850px' },
+        'max-smd': { max: '985px' },
+      },
     },
   },
   plugins: [],
