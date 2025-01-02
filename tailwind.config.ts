@@ -14,8 +14,8 @@ export default {
         Verde: '#11390e'
       },
       screens: {
-        'max-sm': { max: '850px' },
-        'max-smd': { max: '985px' },
+        'max-sm': { max: '750px' },
+        'max-smd': { max: '1290px' },
       },
     },
   },

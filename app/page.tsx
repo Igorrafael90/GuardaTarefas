@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="w-full bg-Cinza h-10 flex  justify-between items-center">
+      <header className="w-full bg-Cinza h-10 flex  justify-between items-center rounded-md">
         <div className="flex space-x-2 items-center">
           <FontAwesomeIcon className="ml-2 h-9 text-green-700" icon={faClock} />
           <h1 className="text-white font-bold">Guarda tarefa</h1>
@@ -30,9 +30,9 @@ export default function Home() {
           <FontAwesomeIcon className="mr-2 text-red-700" icon={faTrash}/>
         </button>
       </header>
-      <main className="w-full h-full flex items-center justify-center">
+      <main className="w-full h-full flex items-center justify-center max-sm:flex-col">
         <section className="w-full flex mt-10 space-x-1">
-          <div className="flex flex-col items-center text-white bg-CinzaM w-2/4 h-64 pl-2 max-w-80 min-w-72 rounded-xl shadow-green-800 shadow-inner">
+          <div className="flex flex-col items-center text-white bg-CinzaM w-2/4 h-64 pl-2 max-w-80 min-w-72 rounded-xl shadow-green-800 shadow-inner ">
             <label className="mt-5 font-bold">Titulo</label>
             <input className="block bg-Cinza w-64 h-8 rounded-md" name="title" value={Title} onChange={(e) => setTitle(e.target.value)} type="text" />
             <label className="font-bold">Tarefa</label>
@@ -44,12 +44,12 @@ export default function Home() {
             </button>
           </div>
           
-          <div className="bg-CinzaM w-3/4 h-auto rounded-lg shadow-green-800 shadow-inner grid grid-cols-2 p-3">
+          <div className="bg-CinzaM w-3/4 h-auto rounded-lg shadow-green-800 shadow-inner grid grid-cols-3 max-smd:grid-cols-2 max-smd:w-3/5 p-3">
             {Tasks.length == 0 ? (
               <p className="text-white font-extrabold">Não existe tarefas</p>
             ) : (
               Tasks.map((task, index) => (
-                <div key={index} className="bg-Cinza w-80 h-48 rounded-lg flex flex-col p-2 mb-5 shadow-md shadow-black">
+                <div key={index} className="bg-Cinza w-80 h-48 rounded-lg flex flex-col p-2 mb-5 shadow-md shadow-black transition ease-out hover:scale-100 hover:-translate-y-1 duration-200">
                   <h1 className="font-extrabold text-white text-xl">{task.Title}</h1>
                   <p className="break-words text-white text-xs h-40 py-2">{task.Content}</p>
                   <div className="flex justify-between">
