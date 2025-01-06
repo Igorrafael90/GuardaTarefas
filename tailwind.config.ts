@@ -17,6 +17,10 @@ export default {
         'max-sm': { max: '750px' },
         'max-smd': { max: '1290px' },
       },
+      width:{
+        'Smd': '1150px',
+        'Smdf': '700px'
+      }
     },
   },
   plugins: [],
