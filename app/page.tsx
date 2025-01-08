@@ -39,14 +39,18 @@ export default function Home() {
             <span className="icone " style={{ "--i": 23} as any}></span>
             <span className="icone " style={{ "--i": 53} as any}></span>
             <span className="icone " style={{ "--i": 39} as any}></span>
-            <span className="icone " style={{ "--i": 50} as any}></span>
+            <span className="icone " style={{ "--i": 20} as any}></span>
             <span className="icone " style={{ "--i": 72} as any}></span>
             <span className="icone " style={{ "--i": 11} as any}></span>
             <span className="icone " style={{ "--i": 18} as any}></span>
             <span className="icone " style={{ "--i": 36} as any}></span>
-            <span className="icone " style={{ "--i": 50} as any}></span>
+            <span className="icone " style={{ "--i": 40} as any}></span>
             <span className="icone " style={{ "--i": 72} as any}></span>
             <span className="icone " style={{ "--i": 17} as any}></span>
+            <span className="icone " style={{ "--i": 26} as any}></span>
+            <span className="icone " style={{ "--i": 49} as any}></span>
+            <span className="icone " style={{ "--i": 90} as any}></span>
+            <span className="icone " style={{ "--i": 49} as any}></span>
         </div>
         <section className="w-full flex mt-10 space-x-1 max-smd:flex-col max-smd:items-center">
           <div className="flex flex-col items-center text-white bg-CinzaM w-72 max-w-72 h-64 pl-2 rounded-xl shadow-green-800 shadow-inner">
