@@ -31,6 +31,23 @@ export default function Home() {
         </button>
       </header>
       <main className="w-full h-full flex items-center justify-center ">
+        <div className="container">
+            <span className="icone " style={{ "--i": 13} as any}></span>
+            <span className="icone " style={{ "--i": 32} as any}></span>
+            <span className="icone " style={{ "--i": 55} as any}></span>
+            <span className="icone " style={{ "--i": 78} as any}></span>
+            <span className="icone " style={{ "--i": 23} as any}></span>
+            <span className="icone " style={{ "--i": 53} as any}></span>
+            <span className="icone " style={{ "--i": 39} as any}></span>
+            <span className="icone " style={{ "--i": 50} as any}></span>
+            <span className="icone " style={{ "--i": 72} as any}></span>
+            <span className="icone " style={{ "--i": 11} as any}></span>
+            <span className="icone " style={{ "--i": 18} as any}></span>
+            <span className="icone " style={{ "--i": 36} as any}></span>
+            <span className="icone " style={{ "--i": 50} as any}></span>
+            <span className="icone " style={{ "--i": 72} as any}></span>
+            <span className="icone " style={{ "--i": 17} as any}></span>
+        </div>
         <section className="w-full flex mt-10 space-x-1 max-smd:flex-col max-smd:items-center">
           <div className="flex flex-col items-center text-white bg-CinzaM w-72 max-w-72 h-64 pl-2 rounded-xl shadow-green-800 shadow-inner">
             <label className="mt-5 font-bold">Titulo</label>
