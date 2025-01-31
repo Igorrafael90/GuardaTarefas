@@ -65,7 +65,7 @@ export default function Home() {
             </button>
           </div>
           
-          <div className="bg-CinzaM w-Smd h-auto rounded-lg shadow-green-800 shadow-inner grid grid-cols-3 p-3 xl:grid-cols-3 xl:w-Smd md:grid-cols-2 md:w-Smdf max-sm:grid-cols-1 max-sm:w-80">
+          <div className="bg-CinzaM w-Smd h-auto min-h-96 rounded-lg shadow-green-800 shadow-inner grid grid-cols-3 p-3 xl:grid-cols-3 xl:w-Smd md:grid-cols-2 md:w-Smdf max-sm:grid-cols-1 max-sm:w-80">
             {Tasks.length == 0 ? (
               <p className="text-white font-extrabold">Não existe tarefas</p>
             ) : (
