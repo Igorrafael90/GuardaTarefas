@@ -52,12 +52,12 @@ export default function Home() {
             <span className="icone " style={{ "--i": 90} as any}></span>
             <span className="icone " style={{ "--i": 49} as any}></span>
         </div>
-        <section className="w-full flex mt-10 space-x-1 max-smd:flex-col max-smd:items-center">
+        <section className="w-full flex mt-10 space-x-1 max-smd:flex-col max-smd:space-y-2 max-smd:items-center">
           <div className="flex flex-col items-center text-white bg-CinzaM w-72 max-w-72 h-64 pl-2 rounded-xl shadow-green-800 shadow-inner">
             <label className="mt-5 font-bold">Titulo</label>
-            <input className="block bg-Cinza w-64 h-8 rounded-md" name="title" value={Title} onChange={(e) => setTitle(e.target.value)} type="text" />
+            <input className="block bg-Cinza w-64 min-h-8 rounded-md" name="title" value={Title} onChange={(e) => setTitle(e.target.value)} type="text" />
             <label className="font-bold">Tarefa</label>
-            <input className="block bg-Cinza w-64 h-8 rounded-md" name="content" value={Content} onChange={(e) => setContent(e.target.value)} type="text" />
+            <textarea rows={10} cols={49} className=" block bg-Cinza w-64 rounded-md" name="content" value={Content} onChange={(e) => setContent(e.target.value)} />
             <label className="font-bold">Data Final</label>
             <input className="block bg-Cinza w-32 rounded-md" name="dataF" value={DataF} onChange={(e) => setDataF(e.target.value)} type="date" />
             <button className="bg-green-800 hover:bg-green-950 hover:text-gray-300 transition duration-300 p-2 mt-3 rounded-md w-44 font-bold" onClick={() => addTask(Title, Content, DataF, Tasks, setTasks, setTitle, setContent, setDataF)}>

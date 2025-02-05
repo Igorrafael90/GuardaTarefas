@@ -18,17 +18,22 @@ export const addTask = (
     setContent: React.Dispatch<React.SetStateAction<string>>,
     setDataF: React.Dispatch<React.SetStateAction<string>>//setDataF: React.Dispatch<React.SetStateAction<string>> significa que a função setDataF é uma função que aceita um argumento de tipo string, e essa função serve para atualizar o estado DataF no React, e no caso de Tasks por esta pegando uma lista. 
 ) => {
+
+    const datafinal = new Date(DataF)
+    const dataatual = new Date()
+
     if (!Title || !Content || !DataF) {
       alert("Preencha todos os campos");
       return;
+    }else if(datafinal < dataatual){
+      alert("A data final não pode ser menor que a atual")
+      return
     }
     
     const dataCriacao = new Date().toLocaleDateString('pt-BR', {
       day: '2-digit',
       month: '2-digit',
       year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
     })
 
     const newTask: Task = {
