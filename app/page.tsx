@@ -57,10 +57,10 @@ export default function Home() {
             <label className="mt-5 font-bold">Titulo</label>
             <input className="block bg-Cinza w-64 min-h-8 rounded-md" name="title" value={Title} onChange={(e) => setTitle(e.target.value)} type="text" />
             <label className="font-bold">Tarefa</label>
-            <textarea rows={10} cols={49} className=" block bg-Cinza w-64 rounded-md" name="content" value={Content} onChange={(e) => setContent(e.target.value)} />
+            <textarea className=" block bg-Cinza w-64 rounded-md" name="content" value={Content} onChange={(e) => setContent(e.target.value)} />
             <label className="font-bold">Data Final</label>
             <input className="block bg-Cinza w-32 rounded-md" name="dataF" value={DataF} onChange={(e) => setDataF(e.target.value)} type="date" />
-            <button className="bg-green-800 hover:bg-green-950 hover:text-gray-300 transition duration-300 p-2 mt-3 rounded-md w-44 font-bold" onClick={() => addTask(Title, Content, DataF, Tasks, setTasks, setTitle, setContent, setDataF)}>
+            <button className="bg-green-800 hover:bg-green-950 hover:text-gray-300 transition duration-300 p-2 my-2 rounded-md w-44 font-bold" onClick={() => addTask(Title, Content, DataF, Tasks, setTasks, setTitle, setContent, setDataF)}>
               Adicionar
             </button>
           </div>
