@@ -4,10 +4,10 @@ Este projeto é um aplicativo simples de gerenciamento de tarefas, onde é poss�
 
 ## ✨ Funcionalidades
 
-- Adicionar tarefas com **título**, **conteúdo** e **data de entrega**.
-- Armazenamento das tarefas no **LocalStorage**.
-- Excluir tarefas individualmente.
-- Excluir todas as tarefas de uma vez.
+- ➕Adicionar tarefas com **título**, **conteúdo** e **data de entrega**.
+- 📩Armazenamento das tarefas no **LocalStorage**.
+- ✖️Excluir tarefas individualmente.
+- ✖️Excluir todas as tarefas de uma vez.
 
 ## 🚀 Ferramentas Usadas
 
