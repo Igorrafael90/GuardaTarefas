@@ -55,10 +55,16 @@ export const addTask = (
   };
 
   export const clearTasks = (
-    setTasks: React.Dispatch<React.SetStateAction<Task[]>>
+    setTasks: React.Dispatch<React.SetStateAction<Task[]>>,
+    setClearTask: React.Dispatch<React.SetStateAction<boolean>>
   ) => {
-    localStorage.removeItem('tasks')
-    setTasks([])//limpa o estado de tasks
+    setClearTask(true)
+
+    setTimeout(() => {
+      localStorage.removeItem('tasks')
+      setTasks([])//limpa o estado de tasks
+      setClearTask(false)
+    }, 470);
   }
 
   export const deleteTask = (

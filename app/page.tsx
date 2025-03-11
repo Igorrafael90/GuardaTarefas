@@ -12,6 +12,7 @@ export default function Home() {
   const [DataF, setDataF] = useState('');
   const [Tasks, setTasks] = useState<Task[]>([]);  // Tipifique o estado Tasks como um array de objetos do tipo Task
   const [CloseTask, setCloseTask] = useState<number | null>(null)
+  const [ClearTask, setClearTask] = useState(false)
 
   useEffect(() => {
     const storedTasks = localStorage.getItem('tasks');
@@ -27,7 +28,7 @@ export default function Home() {
           <FontAwesomeIcon className="ml-2 h-9 text-green-700" icon={faClock} />
           <h1 className="text-white font-bold">Guarda tarefa</h1>
         </div>
-        <button onClick={() => clearTasks(setTasks)}>
+        <button onClick={() => clearTasks(setTasks, setClearTask)}>
           <FontAwesomeIcon className="mr-2 text-red-700" icon={faTrash}/>
         </button>
       </header>
@@ -72,7 +73,7 @@ export default function Home() {
             ) : (
               Tasks.map((task, index) => (
                 <div key={index} className={`Fade bg-Cinza w-80 h-48 rounded-lg flex flex-col p-2 mb-5 shadow-md shadow-black transition ease-out hover:scale-100 hover:-translate-y-1 duration-200 max-sm:w-72 
-                ${CloseTask === task.id ? 'Fadeout' : ''}`}>
+                ${CloseTask === task.id ? 'Fadeout' : ''} ${ClearTask ? 'Fadeout' : ''}`}>
                   <h1 className="break-words font-extrabold text-white text-xl">{task.Title}</h1>
                   <p className="break-words text-white text-xs h-40 py-2">{task.Content}</p>
                   <div className="flex justify-between">
