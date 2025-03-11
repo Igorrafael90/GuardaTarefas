@@ -11,6 +11,7 @@ export default function Home() {
   const [Content, setContent] = useState('');
   const [DataF, setDataF] = useState('');
   const [Tasks, setTasks] = useState<Task[]>([]);  // Tipifique o estado Tasks como um array de objetos do tipo Task
+  const [CloseTask, setCloseTask] = useState<number | null>(null)
 
   useEffect(() => {
     const storedTasks = localStorage.getItem('tasks');
@@ -70,13 +71,14 @@ export default function Home() {
               <p className="text-white font-extrabold">Não existe tarefas</p>
             ) : (
               Tasks.map((task, index) => (
-                <div key={index} className="bg-Cinza w-80 h-48 rounded-lg flex flex-col p-2 mb-5 shadow-md shadow-black transition ease-out hover:scale-100 hover:-translate-y-1 duration-200 max-sm:w-72">
-                  <h1 className="font-extrabold text-white text-xl">{task.Title}</h1>
+                <div key={index} className={`Fade bg-Cinza w-80 h-48 rounded-lg flex flex-col p-2 mb-5 shadow-md shadow-black transition ease-out hover:scale-100 hover:-translate-y-1 duration-200 max-sm:w-72 
+                ${CloseTask === task.id ? 'Fadeout' : ''}`}>
+                  <h1 className="break-words font-extrabold text-white text-xl">{task.Title}</h1>
                   <p className="break-words text-white text-xs h-40 py-2">{task.Content}</p>
                   <div className="flex justify-between">
                     <p className="text-white font-extrabold text-sm">{task.dataCriacao}</p>
                     <p className="text-white font-extrabold text-sm">{task.DataF}</p>
-                    <button onClick={() => deleteTask(task.id, Tasks, setTasks)}>
+                    <button onClick={() => deleteTask(task.id, Tasks, setTasks, setCloseTask)}>
                       <FontAwesomeIcon className="text-red-700" icon={faTrash}/>
                     </button>
                   </div>

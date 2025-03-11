@@ -46,11 +46,41 @@ body {
   animation-duration: calc(300s / var(--i));
 }
 
+.Fade{
+  animation: 1s Fadein;
+}
+
+.Fadeout{
+  animation: 1s Fadeout;
+}
+
 @keyframes anima {
   0%{
     transform: translateY(200vh) scale(0) rotate(0deg);
   }
   100%{
     transform: translateY(-10vh) scale(1) rotate(360deg);
+  }
+}
+
+@keyframes Fadein{
+  from {
+    scale: 0%;
+    opacity: 0%;
+  }
+  to{
+    scale: 100%;
+    opacity: 100%;
+  }
+}
+
+@keyframes Fadeout {
+  from {
+    scale: 100%;
+    opacity: 100%;
+  }
+  to {
+    scale: 0%;
+    opacity: 0%;
   }
 }

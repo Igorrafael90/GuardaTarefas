@@ -63,10 +63,16 @@ export const addTask = (
 
   export const deleteTask = (
     id:number, 
-    Tasks:Task[], 
-    setTasks: React.Dispatch<React.SetStateAction<Task[]>>
+    Tasks:Task[],
+    setTasks: React.Dispatch<React.SetStateAction<Task[]>>,
+    setCloseTask: React.Dispatch<React.SetStateAction<number | null>>
   ) => {
-    const updatedTasks = Tasks.filter(task => task.id !== id)//Filtra todos os ids diferentes do fornecido
-    setTasks(updatedTasks)//Atualiza o estado de tasks
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks))//atualiza o localstorage com a nova lista
+    setCloseTask(id)
+
+    setTimeout(() => {
+      const updatedTasks = Tasks.filter(task => task.id !== id)//Filtra todos os ids diferentes do fornecido
+      setTasks(updatedTasks)//Atualiza o estado de tasks
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks))//atualiza o localstorage com a nova lista
+      setCloseTask(null)//Reseta a animação para o estado nulo
+    }, 470); 
   }
